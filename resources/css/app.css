@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+  --bg-color: #ffffff;
+}
+
+html, body {
+  background-color: var(--bg-color);
+   scroll-behavior: smooth;
+
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+  @keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-infinite-scroll {
+    animation: infinite-scroll 15s linear infinite;
+  }
+  .group:hover .animate-infinite-scroll {
+    animation-play-state: paused;
+  }
+
+
+@keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+    animation: infinite-scroll 100s linear infinite;
+    display: inline-flex;
+    min-width: 200%; /* Увеличиваем ширину для плавности */
+}
+  @media (max-width: 1024px) {
+    .animate-infinite-scroll {
+      min-width: 600%;
+    }
+  }
+    @media (max-width: 620px) {
+    .animate-infinite-scroll {
+      min-width: 1000%;
+    }
+  }
+
+.group:hover .animate-infinite-scroll {
+    animation-play-state: paused;
+}
+
+      #map
+{
+  width: 100%;
+  height: 100%;
+    z-index: 9 !important;
+}
+
+.shrink-animation {
+    --start-scale: 1.15;
+    --end-scale: 1;
+    animation: shrink 1s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes shrink {
+    from { transform: scale(var(--start-scale)); }
+    to { transform: scale(var(--end-scale)); }
+}
+
+    .cart-enter-active, .cart-leave-active {
+        transition: all 0.3s ease;
+    }
+    .cart-enter-from, .cart-leave-to {
+        opacity: 0;
+        transform: translateY(20px);
+    }

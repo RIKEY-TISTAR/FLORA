@@ -1,0 +1,46 @@
+
+@push('meta')
+<title>{{ $meta_title }} Flora в Вогоград</title>
+<meta name="description" content="{{ $meta_description }}">
+<meta name="keywords" content="{{ $meta_keywords }}">
+@endpush
+
+
+<section class="bg-[#f0efed] py-[15px] px-[15px] lg:py-[50px] lg:px-[250px]">
+
+
+
+        <!-- Заголовок статьи -->
+        <!-- <h2 class="text-[30px] lg:text-[40px] mb-[20px] lg:mb-[40px]">{{ $blog->name }}</h2> -->
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[30px] col-span-1">
+
+        <div class="col-span-1 flex flex-col">
+            {{-- <h2 class="text-[30px] lg:text-[40px] mb-[20px] lg:mb-[40px]">{{ $blog->name }}</h2> --}}
+
+             <div class="col-span-1">
+                <img src="{{ asset('storage/' . $image) }}" alt="Основательница магазина за созданием букета"
+                 class="shrink-animation w-full h-full max-h-[500px] object-cover ">
+            </div>
+
+        </div>     
+
+        <div class="flex w-full items-start justify-center py-[20px] col-span-2">
+        <div div class="prose max-w-none text-2xl">
+        <h2 class="text-[30px] lg:text-[40px] mb-[20px] lg:mb-[40px]">{{ $blog->title }}</h2>
+        {!! $blog->description !!}
+
+    </div>
+    
+</div>
+    </div>
+
+
+
+    <div class="pt-[40px]">
+
+        <livewire:blog.blog-last :currentSlug="$blog->slug" />
+    </div>
+</section>
+
+
